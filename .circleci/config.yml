@@ -59,11 +59,13 @@ jobs:
       - checkout
       - install-bazel
       - run: |
+          # deploying node client to test repo
           # TODO This is a bit less safe than manually writing the commit in the case of race conditions
           # Then reusing this ID in later steps
           bazel run //:deploy-npm -- test $NPM_REPO_USERNAME $NPM_REPO_PASSWORD dummy@grakn.ai
       - run-grakn-server
       - run: |
+          # Test deployed node client
           # insert commit into VERSION file
           sed -i -e "s/SNAPSHOT/$CIRCLE_SHA1/g" VERSION
           npm install http://repo.grakn.ai/repository/test-npm-group/grakn-client/-/grakn-client-$(cat VERSION).tgz
