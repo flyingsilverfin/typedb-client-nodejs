@@ -32,7 +32,7 @@ def graknlabs_bazel_distribution():
     git_repository(
            name = "graknlabs_bazel_distribution",
            remote = "https://github.com/flyingsilverfin/bazel-distribution",
-           commit = "e5253b0fe556b128c931127b0ae926e42fef0461", # sync-marker: do not remove this comment, this is used for sync-dependencies by @graknlabs_dependencies
+           commit = "874a1f4ed9c0e10ad8ed14f2d2d0dccce72739d2", # sync-marker: do not remove this comment, this is used for sync-dependencies by @graknlabs_dependencies
     )
 
 def graknlabs_protocol():
