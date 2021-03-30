@@ -45,6 +45,7 @@ build:
         bazel test $(bazel query 'kind(checkstyle_test, //...)')
         npm install
         npm run lint
+        sleep 5000
     test-integration:
       image: graknlabs-ubuntu-20.04
       command: |
